@@ -1,7 +1,7 @@
 # 📊 E-Commerce Business Intelligence 
 An interactive Power BI dashboard for in-depth e-commerce analytics, featuring sales performance, customer behavior, category insights, and geographic distribution. Includes dynamic visuals, cross-filtering, DAX-driven KPIs, and multi-page navigation for a complete business intelligence experience.
 
-![Power BI Dashboard Preview](./Visuals/Category_Performance.png)
+![Power BI Dashboard Preview](./Visuals/Dashboards.png)
 
 
 ## ✨ Project Overview
@@ -26,20 +26,6 @@ Through compelling visuals, smart filtering, and dynamic page navigation, the re
 
 ---
 
-## 📌 Key Features
-
-### 📁 Multi-Page Navigation
-The report is structured with **interactive buttons** that guide the user from one analysis page to another. Each page features a clean layout and is enhanced with dynamic visuals that update in response to user interactions with slicers and charts.
-
-### 🧩 Interactivity
-- Clicking a bar, pie slice, or country triggers **cross-filtering** across all related visuals.
-- **Slicers** for category and continent refine the visual outputs, giving users complete control over the story they want to see.
-- KPI cards update instantly based on user selections.
-
-### 🧪 DAX-Driven Insights
-
-The report uses **DAX formulas** to create powerful calculations, such as:
-
 
 
 # 📈 Sales Performance Analysis
@@ -61,11 +47,11 @@ This section of the dashboard provides a high-level overview of the company's re
 
 ## 🧠 DAX Measures & Calculated Columns
 
-Total Revenue = SUM(ecommerce_orders_2023[Quantity] * ecommerce_orders_2023[Unit Price])
+• Total Revenue = SUM(ecommerce_orders_2023[Quantity] * ecommerce_orders_2023[Unit Price])
 
-Total Orders = COUNT(ecommerce_orders_2023[Order ID])
+• Total Orders = COUNT(ecommerce_orders_2023[Order ID])
 
-AOV = DIVIDE([Total Revenue], [Total Orders])
+• AOV = DIVIDE([Total Revenue], [Total Orders])
 
 ## 🧰 Data Modeling Enhancements
 
@@ -89,18 +75,19 @@ Navigation button links directly to Category or Customer Analysis sections.
 # 👤 Customer Behavior Analytics
 
 This report section dives into customer segmentation, gender demographics, and retention trends to understand the lifecycle and value of different customer groups.
+![Power BI Dashboard Preview](./Visuals/Customer_Behavior_Analytics.png)
 
-📊 Key Visuals
+##📊 Key Visuals
 
-Customer Retention Funnel: New vs Returning Customers
+• Customer Retention Funnel: New vs Returning Customers
 
-Donut Chart: Gender Distribution
+• Donut Chart: Gender Distribution
 
-Bar Chart: Top 5 Customers by Revenue
+• Bar Chart: Top 5 Customers by Revenue
 
-KPI Card: Total Unique Customers
+• KPI Card: Total Unique Customers
 
-🧠 DAX Measures
+## 🧠 DAX Measures & Calculated Columns
 
 FirstPurchaseDate = CALCULATE(MIN(ecommerce_orders_2023[Order Date]), ALLEXCEPT(ecommerce_orders_2023, ecommerce_orders_2023[Customer ID]))
 
@@ -108,75 +95,113 @@ CustomerType = IF(ecommerce_orders_2023[Order Date] = ecommerce_orders_2023[Firs
 
 Total Customers = DISTINCTCOUNT(ecommerce_orders_2023[Customer ID])
 
-📌 Insights
+## 🧰 Data Modeling Enhancements
+•	A calculated column FirstPurchaseDate was introduced to determine each customer's first transaction.
+•	A new column CustomerType classifies customers as "New" or "Returning".
+•	Gender distribution was visualized using the existing Gender field.
+•	✅ New Table Created: FunnelStage to support customer funnel analysis.
+🔢 FunnelStage Table
+FunnelStage = 
+DATATABLE(
+    "Stage", STRING,
+    {
+        {"All Customers"},
+        {"New Customers"},
+        {"Returning Customers"}
+    }
+)
+🔢 Measure to Power Funnel Chart
+Customer Count by Funnel Stage =
+SWITCH(
+    SELECTEDVALUE(FunnelStage[Stage]),
+    "All Customers", CALCULATE(DISTINCTCOUNT(ecommerce_orders_2023[Customer ID])),
+    "New Customers", CALCULATE(DISTINCTCOUNT(ecommerce_orders_2023[Customer ID]), ecommerce_orders_2023[CustomerType] = "New"),
+    "Returning Customers", CALCULATE(DISTINCTCOUNT(ecommerce_orders_2023[Customer ID]), ecommerce_orders_2023[CustomerType] = "Returning")
+)
+📊 Funnel Chart Configuration
+•	Category: FunnelStage[Stage]
+•	Values: [Customer Count by Funnel Stage]
 
-Over 3,600 customers are new while 2,600 are returning, showing good retention.
+## 📌 Insights
 
-Gender is nearly evenly split with a large number of unspecified entries.
+• Over 3,600 customers are new, while 2,600 are returning, showing good retention.
 
-🧭 Navigation & Interactivity
+• Gender is nearly evenly split, with a large number of unspecified entries.
+
+## 🧭 Navigation & Interactivity
 
 All visuals interact with each other on slicer or chart selection.
 
 Buttons lead to Sales or Category Analysis pages.
 
-📦 Category Performance
+# 📦 Category Performance
 
 Here, we analyze how each product category contributes to revenue and sales volume, both globally and per country.
+![Power BI Dashboard Preview](./Visuals/Category_Performance.png)
 
-📊 Key Visuals
+## 📊 Key Visuals
 
-Treemap: Revenue by Product Category
+• Treemap: Revenue by Product Category
 
-Column Chart: Quantity Sold by Product
+• Column Chart: Quantity Sold by Product
 
-Table: Category Performance per Country
+• Table: Category Performance per Country
 
-Top Cards: Top 3 Categories by Revenue
+• Top Cards: Top 3 Categories by Revenue
 
-🧠 DAX Measures
+## 🧠 DAX Measures
 
 Total Quantity = SUM(ecommerce_orders_2023[Quantity])
 
 Revenue = ecommerce_orders_2023[Quantity] * ecommerce_orders_2023[Unit Price]
 
-📌 Insights
+## 📌 Insights
 
-Home & Garden, Toys, and Sports lead in both quantity sold and revenue.
+• Home & Garden, Toys, and Sports lead in both quantity sold and revenue.
 
-Some regions prefer specific categories (e.g., Automotive in Germany, Beauty in Brazil).
+• Some regions prefer specific categories (e.g., Automotive in Germany, Beauty in Brazil).
 
-🧭 Navigation & Interactivity
+## 🧭 Navigation & Interactivity
 
-Slicer allows filtering by category to update the map and performance table.
+• Slicer allows filtering by category to update the map and performance table.
 
-Buttons guide users to Customer and Sales views.
+• Buttons guide users to Customer and Sales views.
 
-🌍 Geographic Analysis
+## 🌍 Geographic Analysis
 
 This page visually represents how revenue is distributed across continents and countries, helping identify geographical strengths.
+![Power BI Dashboard Preview](./Visuals/Geographic_Analysis.png)
 
-📊 Key Visuals
+## 📊 Key Visuals
 
-Map: Revenue by Country
+• Map: Revenue by Country
 
-Stacked Bar Chart: Revenue by Continent
+• Stacked Bar Chart: Revenue by Continent
 
-Table: Country-wise Revenue and Category Breakdown
+• Table: Country-wise Revenue and Category Breakdown
 
-🧠 DAX Measures
+## 🧠 DAX Measures & Calculated Columns
 
 Total Revenue = SUM(ecommerce_orders_2023[Quantity] * ecommerce_orders_2023[Unit Price])
-
-📌 Insights
+Continents = SWITCH(
+    TRUE(),
+    ecommerce_orders_2023[Country] IN {"United States", "Canada", "Mexico"}, "North America",
+    ecommerce_orders_2023[Country] IN {"Germany", "France", "United Kingdom", "Spain", "Italy", "Netherlands"}, "Europe",
+    ecommerce_orders_2023[Country] IN {"India", "China", "Japan", "Singapore", "United Arab Emirates"}, "Asia",
+    ecommerce_orders_2023[Country] IN {"Australia", "New Zealand"}, "Oceania",
+    ecommerce_orders_2023[Country] IN {"Brazil", "Argentina", "Chile"}, "South America",
+    ecommerce_orders_2023[Country] IN {"Nigeria", "South Africa", "Egypt", "Kenya"}, "Africa",
+    "Other"
+)
+## 📌 Insights
 
 North America and Europe dominate in total sales.
 
 Australia and Brazil contribute significantly across various categories.
 
-🧭 Navigation & Interactivity
+## 🧭 Navigation & Interactivity
 
 Interactive continent and country filters update all visuals in real-time.
 
-Navigation buttons return user to any previous dashboard section.
+Navigation buttons return the user to any previous dashboard section.
 
