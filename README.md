@@ -44,11 +44,12 @@ The report uses **DAX formulas** to create powerful calculations, such as:
 
 
 
-📈 Sales Performance Analysis
+# 📈 Sales Performance Analysis
 
-This section of the dashboard provides a high-level overview of the company's revenue performance, enabling stakeholders to assess the financial health of the business at a glance.
+This section of the dashboard provides a high-level overview of the company's revenue performance, enabling stakeholders to assess the business's financial health at a glance.
+![Power BI Dashboard Preview](./Visuals/Sales_performance_analysis)
 
-📊 Key Visuals
+## 📊 Key Visuals
 
 KPI Cards: Total Revenue, Total Orders, Average Order Value (AOV)
 
@@ -58,7 +59,7 @@ Line Chart: Quarterly Revenue Trend
 
 Interactive Filters: Category selector, Date range
 
-🧠 DAX Measures
+## 🧠 DAX Measures
 
 Total Revenue = SUM(ecommerce_orders_2023[Quantity] * ecommerce_orders_2023[Unit Price])
 
@@ -66,19 +67,19 @@ Total Orders = COUNT(ecommerce_orders_2023[Order ID])
 
 AOV = DIVIDE([Total Revenue], [Total Orders])
 
-📌 Insights
+## 📌 Insights
 
 Revenue remains relatively consistent across quarters with minor seasonal variations.
 
 Home & Garden, Toys, and Clothing lead in category performance.
 
-🧭 Navigation & Interactivity
+## 🧭 Navigation & Interactivity
 
 Clicking any category filters all visuals across the page.
 
 Navigation button links directly to Category or Customer Analysis sections.
 
-👤 Customer Behavior Analytics
+# 👤 Customer Behavior Analytics
 
 This report section dives into customer segmentation, gender demographics, and retention trends to understand the lifecycle and value of different customer groups.
 
