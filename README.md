@@ -47,7 +47,7 @@ The report uses **DAX formulas** to create powerful calculations, such as:
 # 📈 Sales Performance Analysis
 
 This section of the dashboard provides a high-level overview of the company's revenue performance, enabling stakeholders to assess the business's financial health at a glance.
-![Power BI Dashboard Preview](./Visuals/Sales_performance_analysis)
+![Power BI Dashboard Preview](./Visuals/Sales_performance_analysis.png)
 
 ## 📊 Key Visuals
 
