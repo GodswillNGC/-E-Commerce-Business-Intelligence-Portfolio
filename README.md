@@ -177,7 +177,7 @@ Revenue = ecommerce_orders_2023[Quantity] * ecommerce_orders_2023[Unit Price]
 ## 🌍 Geographic Analysis
 
 This page visually represents how revenue is distributed across continents and countries, helping identify geographical strengths.
-![Power BI Dashboard Preview](./Visuals/Geographic_Analysis.png)
+
 ![Power BI Dashboard Preview](./Visuals/Geographic_Analysis.png)
 
 ## 📊 Key Visuals
@@ -212,4 +212,11 @@ Australia and Brazil contribute significantly across various categories.
 Interactive continent and country filters update all visuals in real-time.
 
 Navigation buttons return the user to any previous dashboard section.
+
+
+## Contact
+📧 [Email](mailto:godswill.ngc@gmail.com)  
+🔗 [LinkedIn](https://www.linkedin.com/in/godswill-ndubuisi-3341401a2)  
+🔵 [Facebook](https://www.facebook.com/godswill.ndubuisi.92)
+💬 [Chat on WhatsApp](https://wa.me/message/FB4QE6CIUUF6D1)  
 
