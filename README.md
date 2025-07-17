@@ -178,6 +178,7 @@ Revenue = ecommerce_orders_2023[Quantity] * ecommerce_orders_2023[Unit Price]
 
 This page visually represents how revenue is distributed across continents and countries, helping identify geographical strengths.
 ![Power BI Dashboard Preview](./Visuals/Geographic_Analysis.png)
+![Power BI Dashboard Preview](./Visuals/Geographic_Analysis.png)
 
 ## 📊 Key Visuals
 
