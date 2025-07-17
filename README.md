@@ -42,42 +42,133 @@ The report is structured with **interactive buttons** that guide the user from o
 
 The report uses **DAX formulas** to create powerful calculations, such as:
 
-#### Customer Segmentation:
-```DAX
-FirstPurchaseDate =
-CALCULATE(
-    MIN(ecommerce_orders_2023[Order Date]),
-    ALLEXCEPT(ecommerce_orders_2023, ecommerce_orders_2023[Customer ID])
-)
 
-CustomerType =
-IF(
-    ecommerce_orders_2023[Order Date] = ecommerce_orders_2023[FirstPurchaseDate],
-    "New",
-    "Returning"
-)
-Revenue Calculation:
-DAX
-Copy
-Edit
+
+📈 Sales Performance Analysis
+
+This section of the dashboard provides a high-level overview of the company's revenue performance, enabling stakeholders to assess the financial health of the business at a glance.
+
+📊 Key Visuals
+
+KPI Cards: Total Revenue, Total Orders, Average Order Value (AOV)
+
+Bar Chart: Revenue by Category
+
+Line Chart: Quarterly Revenue Trend
+
+Interactive Filters: Category selector, Date range
+
+🧠 DAX Measures
+
+Total Revenue = SUM(ecommerce_orders_2023[Quantity] * ecommerce_orders_2023[Unit Price])
+
+Total Orders = COUNT(ecommerce_orders_2023[Order ID])
+
+AOV = DIVIDE([Total Revenue], [Total Orders])
+
+📌 Insights
+
+Revenue remains relatively consistent across quarters with minor seasonal variations.
+
+Home & Garden, Toys, and Clothing lead in category performance.
+
+🧭 Navigation & Interactivity
+
+Clicking any category filters all visuals across the page.
+
+Navigation button links directly to Category or Customer Analysis sections.
+
+👤 Customer Behavior Analytics
+
+This report section dives into customer segmentation, gender demographics, and retention trends to understand the lifecycle and value of different customer groups.
+
+📊 Key Visuals
+
+Customer Retention Funnel: New vs Returning Customers
+
+Donut Chart: Gender Distribution
+
+Bar Chart: Top 5 Customers by Revenue
+
+KPI Card: Total Unique Customers
+
+🧠 DAX Measures
+
+FirstPurchaseDate = CALCULATE(MIN(ecommerce_orders_2023[Order Date]), ALLEXCEPT(ecommerce_orders_2023, ecommerce_orders_2023[Customer ID]))
+
+CustomerType = IF(ecommerce_orders_2023[Order Date] = ecommerce_orders_2023[FirstPurchaseDate], "New", "Returning")
+
+Total Customers = DISTINCTCOUNT(ecommerce_orders_2023[Customer ID])
+
+📌 Insights
+
+Over 3,600 customers are new while 2,600 are returning, showing good retention.
+
+Gender is nearly evenly split with a large number of unspecified entries.
+
+🧭 Navigation & Interactivity
+
+All visuals interact with each other on slicer or chart selection.
+
+Buttons lead to Sales or Category Analysis pages.
+
+📦 Category Performance
+
+Here, we analyze how each product category contributes to revenue and sales volume, both globally and per country.
+
+📊 Key Visuals
+
+Treemap: Revenue by Product Category
+
+Column Chart: Quantity Sold by Product
+
+Table: Category Performance per Country
+
+Top Cards: Top 3 Categories by Revenue
+
+🧠 DAX Measures
+
+Total Quantity = SUM(ecommerce_orders_2023[Quantity])
+
 Revenue = ecommerce_orders_2023[Quantity] * ecommerce_orders_2023[Unit Price]
-Return Rate:
-DAX
-Copy
-Edit
-Return Quantity =
-IF(ecommerce_orders_2023[Status] = "Returned", ecommerce_orders_2023[Quantity], 0)
 
-Return Rate =
-DIVIDE(SUM(ecommerce_orders_2023[Return Quantity]), SUM(ecommerce_orders_2023[Quantity]))
-Funnel Stage Counts (using disconnected table):
-DAX
-Copy
-Edit
-CustomerFunnelCount =
-SWITCH(
-    SELECTEDVALUE(FunnelStages[FunnelStage]),
-    "Total Customers", COUNTROWS(CustomerSummary),
-    "New Customers", CALCULATE(COUNTROWS(CustomerSummary), CustomerSummary[CustomerType] = "New"),
-    "Returning Customers", CALCULATE(COUNTROWS(CustomerSummary), CustomerSummary[CustomerType] = "Returning")
-)
+📌 Insights
+
+Home & Garden, Toys, and Sports lead in both quantity sold and revenue.
+
+Some regions prefer specific categories (e.g., Automotive in Germany, Beauty in Brazil).
+
+🧭 Navigation & Interactivity
+
+Slicer allows filtering by category to update the map and performance table.
+
+Buttons guide users to Customer and Sales views.
+
+🌍 Geographic Analysis
+
+This page visually represents how revenue is distributed across continents and countries, helping identify geographical strengths.
+
+📊 Key Visuals
+
+Map: Revenue by Country
+
+Stacked Bar Chart: Revenue by Continent
+
+Table: Country-wise Revenue and Category Breakdown
+
+🧠 DAX Measures
+
+Total Revenue = SUM(ecommerce_orders_2023[Quantity] * ecommerce_orders_2023[Unit Price])
+
+📌 Insights
+
+North America and Europe dominate in total sales.
+
+Australia and Brazil contribute significantly across various categories.
+
+🧭 Navigation & Interactivity
+
+Interactive continent and country filters update all visuals in real-time.
+
+Navigation buttons return user to any previous dashboard section.
+
