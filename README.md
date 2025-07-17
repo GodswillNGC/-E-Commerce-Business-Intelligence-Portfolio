@@ -97,9 +97,13 @@ Total Customers = DISTINCTCOUNT(ecommerce_orders_2023[Customer ID])
 
 ## 🧰 Data Modeling Enhancements
 •	A calculated column FirstPurchaseDate was introduced to determine each customer's first transaction.
+
 •	A new column CustomerType classifies customers as "New" or "Returning".
+
 •	Gender distribution was visualized using the existing Gender field.
+
 •	✅ New Table Created: FunnelStage to support customer funnel analysis.
+
 🔢 FunnelStage Table
 FunnelStage = 
 DATATABLE(
@@ -118,8 +122,11 @@ SWITCH(
     "New Customers", CALCULATE(DISTINCTCOUNT(ecommerce_orders_2023[Customer ID]), ecommerce_orders_2023[CustomerType] = "New"),
     "Returning Customers", CALCULATE(DISTINCTCOUNT(ecommerce_orders_2023[Customer ID]), ecommerce_orders_2023[CustomerType] = "Returning")
 )
+
 📊 Funnel Chart Configuration
+
 •	Category: FunnelStage[Stage]
+
 •	Values: [Customer Count by Funnel Stage]
 
 ## 📌 Insights
