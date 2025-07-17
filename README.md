@@ -3,7 +3,7 @@ An interactive Power BI dashboard for in-depth e-commerce analytics, featuring s
 
 # 📊 E-Commerce Business Intelligence Portfolio – Power BI Interactive Dashboard
 
-![Power BI Dashboard Preview](.Visuals/6859652555.jpg)
+![Power BI Dashboard Preview](./Visuals/Category_Performance.png)
 
 
 ## ✨ Project Overview
