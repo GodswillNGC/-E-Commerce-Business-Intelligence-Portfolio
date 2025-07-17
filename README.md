@@ -1,7 +1,5 @@
-# -E-Commerce-Business-Intelligence-Portfolio
+# 📊 E-Commerce Business Intelligence 
 An interactive Power BI dashboard for in-depth e-commerce analytics, featuring sales performance, customer behavior, category insights, and geographic distribution. Includes dynamic visuals, cross-filtering, DAX-driven KPIs, and multi-page navigation for a complete business intelligence experience.
-
-# 📊 E-Commerce Business Intelligence Portfolio – Power BI Interactive Dashboard
 
 ![Power BI Dashboard Preview](./Visuals/Category_Performance.png)
 
@@ -51,21 +49,30 @@ This section of the dashboard provides a high-level overview of the company's re
 
 ## 📊 Key Visuals
 
-KPI Cards: Total Revenue, Total Orders, Average Order Value (AOV)
+•	 KPI Cards: Total Revenue, Total Orders, Average Order Value (AOV)
 
-Bar Chart: Revenue by Category
+•	 Bar Chart: Revenue by Category
 
-Line Chart: Quarterly Revenue Trend
+•	 Line Chart: Quarterly Revenue Trend
 
-Interactive Filters: Category selector, Date range
+•	 Interactive Filters: Category selector, Date range
 
-## 🧠 DAX Measures
+•	 Interactive Filters: Category selector, Date range
+
+## 🧠 DAX Measures & Calculated Columns
 
 Total Revenue = SUM(ecommerce_orders_2023[Quantity] * ecommerce_orders_2023[Unit Price])
 
 Total Orders = COUNT(ecommerce_orders_2023[Order ID])
 
 AOV = DIVIDE([Total Revenue], [Total Orders])
+
+## 🧰 Data Modeling Enhancements
+
+•	No new tables were created in this section.
+
+•	Additional calculated measures were introduced to break down revenue and order trends over time.
+
 
 ## 📌 Insights
 
