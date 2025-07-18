@@ -225,9 +225,9 @@ From identifying top-performing products to understanding customer retention pat
 More than just a report, this portfolio tells a story. It is one where data drives understanding, and insights drive action.
 
 ## Project Files
-[Download Excel File](https://github.com/GodswillNGC/-E-Commerce-Business-Intelligence-Portfolio/raw/refs/heads/main/ecommerce_orders_2023.xlsx)
-
+[Download Excel File](https://github.com/GodswillNGC/-E-Commerce-Business-Intelligence-Portfolio/raw/refs/heads/main/ecommerce_orders_2023.xlsx)  i   
 [Download Power Bi File](https://github.com/GodswillNGC/-E-Commerce-Business-Intelligence-Portfolio/raw/refs/heads/main/E-commerce%20Portfolio.pbix)
+
 ---
 ---
 ## Contact Ndubuisi Godswill
