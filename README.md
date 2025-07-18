@@ -222,7 +222,7 @@ This project combines multiple layers of analysis, including sales trends, custo
 
 From identifying top-performing products to understanding customer retention patterns, this solution demonstrates the practical power of data analytics in decision-making. 
 
-More than just a report, this portfolio tells a story—one where data drives understanding, and insights drive action.
+More than just a report, this portfolio tells a story. It is one where data drives understanding, and insights drive action.
 
 ## Dataset Used
 [Download Excel File](https://github.com/GodswillNGC/-E-Commerce-Business-Intelligence-Portfolio/raw/refs/heads/main/ecommerce_orders_2023.xlsx)
