@@ -25,9 +25,6 @@ Through compelling visuals, smart filtering, and dynamic page navigation, the re
 - Understand how geography influences revenue and category sales.
 
 ---
-## Dataset Used
-[Download Excel File](https://github.com/GodswillNGC/-E-Commerce-Business-Intelligence-Portfolio/raw/refs/heads/main/ecommerce_orders_2023.xlsx)
-
 
 # 📈 Sales Performance Analysis
 
@@ -216,9 +213,23 @@ Australia and Brazil contribute significantly across various categories.
 Interactive continent and country filters update all visuals in real-time.
 
 Navigation buttons return the user to any previous dashboard section.
+---
+---
 
+## 🧾 Project Summary
 
-## Contact
+This project combines multiple layers of analysis, including sales trends, customer behavior, category performance, and regional insights, into a cohesive and interactive dashboard. Every visual, slicer, and navigation button was thoughtfully designed to provide clarity, depth, and ease of exploration.
+
+From identifying top-performing products to understanding customer retention patterns, this solution demonstrates the practical power of data analytics in decision-making. 
+
+More than just a report, this portfolio tells a story—one where data drives understanding, and insights drive action.
+
+## Dataset Used
+[Download Excel File](https://github.com/GodswillNGC/-E-Commerce-Business-Intelligence-Portfolio/raw/refs/heads/main/ecommerce_orders_2023.xlsx)
+
+---
+---
+## Contact Ndubuisi Godswill
 📧 [Email](mailto:godswill.ngc@gmail.com)  
 
 🔗 [LinkedIn](https://www.linkedin.com/in/godswill-ndubuisi-3341401a2)  
