@@ -226,6 +226,7 @@ More than just a report, this portfolio tells a story. It is one where data driv
 
 ## Project Files
 [Download Excel File](https://github.com/GodswillNGC/-E-Commerce-Business-Intelligence-Portfolio/raw/refs/heads/main/ecommerce_orders_2023.xlsx)
+
 [Download Power Bi File](https://github.com/GodswillNGC/-E-Commerce-Business-Intelligence-Portfolio/raw/refs/heads/main/E-commerce%20Portfolio.pbix)
 ---
 ---
