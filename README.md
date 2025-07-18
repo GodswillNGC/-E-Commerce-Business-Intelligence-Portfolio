@@ -25,12 +25,14 @@ Through compelling visuals, smart filtering, and dynamic page navigation, the re
 - Understand how geography influences revenue and category sales.
 
 ---
-
+## Dataset Used
+[Download Excel File](https://github.com/GodswillNGC/-E-Commerce-Business-Intelligence-Portfolio/raw/refs/heads/main/ecommerce_orders_2023.xlsx)
 
 
 # 📈 Sales Performance Analysis
 
 This section of the dashboard provides a high-level overview of the company's revenue performance, enabling stakeholders to assess the business's financial health at a glance.
+
 ![Power BI Dashboard Preview](./Visuals/Sales_Performance_Analysis.png)
 
 ## 📊 Key Visuals
@@ -75,6 +77,7 @@ Navigation button links directly to Category or Customer Analysis sections.
 # 👤 Customer Behavior Analytics
 
 This report section dives into customer segmentation, gender demographics, and retention trends to understand the lifecycle and value of different customer groups.
+
 ![Power BI Dashboard Preview](./Visuals/Customer_Behavior_Analytics.png)
 
 ##📊 Key Visuals
@@ -144,6 +147,7 @@ Buttons lead to Sales or Category Analysis pages.
 # 📦 Category Performance
 
 Here, we analyze how each product category contributes to revenue and sales volume, both globally and per country.
+
 ![Power BI Dashboard Preview](./Visuals/Category_Performance.png)
 
 ## 📊 Key Visuals
